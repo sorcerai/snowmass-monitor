@@ -1,0 +1,11 @@
+# .gcloudignore
+node_modules/
+npm-debug.log
+.git/
+.gitignore
+*.md
+.env
+*.bak
+debug_login.js
+local_package.json
+package-lock.json

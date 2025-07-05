@@ -1,0 +1,24 @@
+# Minimal Dockerfile for testing
+FROM node:18-slim
+
+WORKDIR /app
+
+# Copy package.json
+COPY package.json ./
+
+# Install dependencies (fresh install)
+RUN npm install
+
+# Copy source
+COPY . .
+
+# Create directory for baselines
+RUN mkdir -p /app/tmp/baselines
+
+# Environment
+ENV PORT=8080
+ENV NODE_ENV=production
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
